@@ -135,10 +135,11 @@ app.post('/login', async (req, res) => {
   }
 });
 
+/*
 app.get('/ping', (req, res) => {
   console.log('🔔 Ping received!');
   res.send('pong');
-});
+});*/
 
 
 // Global Error Handler
