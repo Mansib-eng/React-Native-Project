@@ -59,6 +59,7 @@ app.post('/register', async (req, res) => {
         message: 'All fields including deviceId are required'
       });
     }
+    console.log('📥 Incoming Register Payload:', req.body);
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -80,7 +81,7 @@ app.post('/register', async (req, res) => {
       }
     });
   } catch (error) {
-    console.error('Registration Error:', error);
+    console.error('💥 Registration Error:', error.message);
     res.status(500).json({
       success: false,
       message: 'Server error during registration',
